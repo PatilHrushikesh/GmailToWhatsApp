@@ -83,7 +83,6 @@ toml==0.10.1
 traitlets==4.3.3
 twilio==6.41.0
 tzlocal==2.1
-ubuntu-advantage-tools==20.3
 ubuntu-drivers-common==0.0.0
 ufw==0.36
 unattended-upgrades==0.1
