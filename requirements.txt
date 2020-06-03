@@ -60,7 +60,6 @@ pyasn1-modules==0.2.8
 pycairo==1.16.2
 pycups==1.9.73
 Pygments==2.6.1
-PyGObject==3.36.0
 PyJWT==1.7.1
 pylint==2.5.2
 pymacaroons==0.13.0
