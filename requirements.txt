@@ -8,6 +8,7 @@ Brlapi==0.7.0
 cachetools==4.1.0
 certifi==2019.11.28
 chardet==3.0.4
+chrome-gnome-shell==0.0.0
 click==7.1.2
 command-not-found==0.3
 cryptography==2.8
@@ -59,6 +60,7 @@ pbr==5.4.5
 pexpect==4.6.0
 pickleshare==0.7.5
 Pillow==7.0.0
+pip-autoremove==0.9.1
 prompt-toolkit==3.0.5
 protobuf==3.6.1
 pyasn1==0.4.8
@@ -95,6 +97,7 @@ traitlets==4.3.3
 twilio==6.41.0
 tzlocal==2.1
 ubuntu-advantage-tools==20.3
+ubuntu-drivers-common==0.0.0
 ufw==0.36
 unattended-upgrades==0.1
 unity-tweak-tool==0.0.7
@@ -105,3 +108,4 @@ wadllib==1.3.3
 wcwidth==0.1.9
 Werkzeug==1.0.1
 wrapt==1.12.1
+xkit==0.0.0
