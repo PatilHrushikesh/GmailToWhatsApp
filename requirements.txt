@@ -77,7 +77,6 @@ rsa==4.0
 SecretStorage==2.3.1
 simplejson==3.16.0
 six==1.14.0
-system-service==0.3
 systemd-python==234
 testresources==2.0.1
 toml==0.10.1
