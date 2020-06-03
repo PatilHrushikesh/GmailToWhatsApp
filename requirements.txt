@@ -83,7 +83,6 @@ toml==0.10.1
 traitlets==4.3.3
 twilio==6.41.0
 tzlocal==2.1
-unity-tweak-tool==0.0.7
 uritemplate==3.0.1
 urllib3==1.25.8
 usb-creator==0.3.7
