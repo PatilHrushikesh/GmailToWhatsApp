@@ -166,9 +166,9 @@ def ModifyMessage(service, user_id, msg_id, msg_labels):
 #if __name__ == '__main__':
 service=get_service()      
 query=""
-query+='is:unread'
+#query+='is:unread'
 query+=" AND "+"category:forums "  
-query+=" AND "+ " after:06/01/2020"
+query+=" AND "+ " after:06/02/2020"
                                                     #MM/DD/YYYY
 messages=ListMessagesMatchingQueryAndLabelId(service,'me', query,label_ids=[])#after:05/20/2020 AND is:unread
     #message=messages[0]
