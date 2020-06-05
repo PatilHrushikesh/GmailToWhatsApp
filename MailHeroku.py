@@ -180,9 +180,6 @@ MailSenderList=[]
 MailSubjectList=[]
 
 for message in messages:
-  if i > 3:
-    break
-  i=i+1
   #print(message['id'])
   #print(message)
   ModifyMessage(service,'me', message['id'], msg_labels)
