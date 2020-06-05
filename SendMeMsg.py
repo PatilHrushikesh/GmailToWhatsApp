@@ -19,7 +19,7 @@ def SendMeMsg():
     if len(msgformat) != 0:
         message = client.messages.create( 
                                 from_=fromID,  
-                                body=f"=======================\n   Total {len(msgformat)} messages today\
+                                body=f"=======================\n     Total {len(msgformat)} messages today\
                                     =======================\n",    
                                 to=toID)
         for msg in msgformat:
