@@ -1,10 +1,11 @@
-from apscheduler.schedulers.blocking import BlockingScheduler
 from SendMeMsg import SendMeMsg
+from apscheduler.schedulers.blocking import BlockingScheduler
 
-def todo():
+sched = BlockingScheduler()
+
+@sched.scheduled_job('interval', minutes=3)
+def timed_job():
     SendMeMsg()
-    print("MSG sent")
+    print('This job is run every three minutes.')
 
-sched=BlockingScheduler()
-sched.add_job(todo,'interval',minutes=2)
 sched.start()
