@@ -70,7 +70,7 @@ def ListMessagesMatchingQueryAndLabelId(service, user_id, query='',label_ids=[])
         #    print(msg)
         return messages
       except errors.HttpError as error:
-        print (f'An error occurred: {error}')
+        print (f'An error occurred 1: {error}')
 
 def Get_Mime_Message_And_Attachments(service, message,user_id):
   """Get and store attachment from Message with given id.
@@ -87,9 +87,8 @@ def Get_Mime_Message_And_Attachments(service, message,user_id):
     msg_id=message["id"]
    
     message = service.users().messages().get(userId=user_id, id=msg_id).execute()
-    #print(message)
-    parts = [message['payload']]
-    labels=message['labelIds']
+    parts = [message['payload']]   
+    #print("==========================================================\n\n\n\n\n\n\n\n")
     headers=message["payload"]["headers"]
 
     MailSubject = next((sub for sub in headers if sub['name'] == 'Subject'), "NO Suject")
@@ -123,7 +122,9 @@ def Get_Mime_Message_And_Attachments(service, message,user_id):
                 msg_str = base64.urlsafe_b64decode(data.encode('ASCII'))
                 mime_msg = email.message_from_bytes(msg_str)
                 body=str(mime_msg.get_payload())
-                #print(body)
+                # print(MailSender)
+                # print(Subject)
+                # print(body)
                 if(has_attachments):
                   body+="\n\n"+"* This mail contain attachments*\n"
                 return MailSender,Subject,body
@@ -132,7 +133,7 @@ def Get_Mime_Message_And_Attachments(service, message,user_id):
 
 
   except errors.HttpError as error:
-    print (f'An error occurred: {error}')
+    print (f'An error occurred 2: {error}')
 
 def ModifyMessage(service, user_id, msg_id, msg_labels):
   """Modify the Labels on the given Message.
@@ -151,13 +152,9 @@ def ModifyMessage(service, user_id, msg_id, msg_labels):
 
     message = service.users().messages().modify(userId=user_id, id=msg_id,
                                                 body=msg_labels).execute()
-
-    label_ids = message['labelIds']
-    #print(label_ids)
-    #print 'Message ID: %s - With Label IDs %s' % (msg_id, label_ids)
     return message
   except errors.HttpError as error:
-     print (f'An error occurred: {error}')
+     print (f'An error occurred 3: {error}')
 
 
 
@@ -182,11 +179,15 @@ MailSubjectList=[]
 for message in messages:
   #print(message['id'])
   #print(message)
+  if i > 3:
+    break
   ModifyMessage(service,'me', message['id'], msg_labels)
   from_mail,Subject,text=Get_Mime_Message_And_Attachments(service, message,'me')
   TextBody.append(text)
   MailSenderList.append(from_mail)
   MailSubjectList.append(Subject)
+  i=i+1
+# print("_____________________________________\n\n\n\n")
         
         
         
